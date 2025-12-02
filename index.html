@@ -51,21 +51,8 @@
             box-shadow: 0 0 25px rgba(6, 182, 212, 0.7), 0 0 40px rgba(6, 182, 212, 0.5);
             transform: translateY(-2px);
         }
-
-        /* Иконка Юпитера */
-        .jupiter-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #c79c65, #8b5f36);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 25px #c79c65, 0 0 10px rgba(255, 255, 255, 0.5) inset;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #1f2937; /* dark grey text */
-        }
+        
+        /* Ескі .jupiter-icon стилі жойылды, енді суреттің өзіне стиль береміз */
 
         /* Список фактов */
         .fact-item {
@@ -101,7 +88,18 @@
         <!-- Главная карточка Юпитера -->
         <section class="p-8 md:p-12 bg-dark-slate card-border rounded-xl mb-12">
             <div class="flex flex-col items-center justify-center mb-6">
-                <div class="jupiter-icon mb-4">5</div>
+                
+                <!-- ЮПИТЕРДІҢ ФОТОСЫ ОСЫ ЖЕРДЕ -->
+               <!-- ЮПИТЕРДІҢ ФОТОСЫ ОСЫ ЖЕРДЕ -->
+<img 
+    src="2.png"
+    alt="Юпитер планетасының фотосы"
+    class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-neon-cyan shadow-xl shadow-neon-cyan/50"
+    onerror="this.onerror=null; this.src='https://placehold.co/80x80/000000/c79c65?text=JUPITER'"
+>
+
+                <!-- СУРЕТ СІЛТЕМЕСІ: Енді src='название 2.png' деп орнатылды. -->
+                
                 <h2 class="text-4xl font-bold text-jupiter-gold">Юпитер</h2>
                 <p class="text-lg text-slate-400 mt-2 font-mono">Газды алыптық: Системалық сипаттама</p>
             </div>
