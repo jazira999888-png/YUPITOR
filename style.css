@@ -6,9 +6,9 @@
 }
 
 body {
-    background: radial-gradient(circle at top, #0b0f2b, #000000);
-    color: #ffffff;
-    height: 100vh;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #0b0f2b, #000);
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,43 +16,30 @@ body {
 
 .space {
     text-align: center;
-    max-width: 600px;
-    padding: 30px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
 }
 
 h1 {
-    font-size: 48px;
-    letter-spacing: 6px;
+    font-size: clamp(28px, 6vw, 48px);
     margin-bottom: 20px;
+    letter-spacing: 5px;
     color: #ffd27d;
 }
 
 .planet {
-    width: 260px;
-    margin: 25px 0;
+    width: min(80vw, 280px); /* ✅ телефонға сай */
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
-    box-shadow: 0 0 40px rgba(255, 210, 125, 0.4);
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 0 35px rgba(255, 210, 125, 0.45);
 }
 
 p {
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #dcdcdc;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    border: 1px solid #ffd27d;
-    color: #ffd27d;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #ffd27d;
-    color: #000;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: 1.6;
+    margin-top: 12px;
+    color: #ddd;
 }
