@@ -2,31 +2,164 @@
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
-    <title>Юпитер | Jupiter</title>
-
-    <!-- Телефонға бейімдеу -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юпитер: Күн Жүйесінің Алыбы</title>
+    <!-- Подключение Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Настройка шрифтов и цветов -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'black-void': '#000000',
+                        'jupiter-gold': '#c79c65',
+                        'neon-cyan': '#06b6d4', // cyan-500 для акцентов
+                        'dark-slate': '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Consolas', 'Monaco', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Полностью черный фон для "космического" вида */
+        body {
+            background-color: #000000;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        /* Эффект свечения для заголовков и карточек (киберпанк стиль) */
+        .neon-glow {
+            text-shadow: 0 0 5px #06b6d4, 0 0 10px #06b6d4;
+            transition: all 0.3s;
+        }
+        
+        .card-border {
+            border: 1px solid rgba(6, 182, 212, 0.3); /* Легкая рамка */
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4); /* Неоновое свечение */
+        }
+        
+        .card-border:hover {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.7), 0 0 40px rgba(6, 182, 212, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Иконка Юпитера */
+        .jupiter-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #c79c65, #8b5f36);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 25px #c79c65, 0 0 10px rgba(255, 255, 255, 0.5) inset;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1f2937; /* dark grey text */
+        }
+
+        /* Список фактов */
+        .fact-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .fact-item::before {
+            content: ">>"; /* Футуристический маркер */
+            color: #06b6d4;
+            position: absolute;
+            left: 0;
+            font-family: 'Monospace', monospace;
+        }
+
+        .fact-title {
+            color: #c79c65; /* Юпитер золотой */
+            font-weight: 600;
+        }
+    </style>
 </head>
-<body>
+<body class="p-4 md:p-12">
 
-<div class="space">
-    <h1>ЮПИТЕР</h1>
+    <header class="text-center mb-16">
+        <h1 class="text-7xl font-extrabold text-white mb-2 tracking-wider">
+            <span class="neon-glow text-neon-cyan">JUPITER</span>
+        </h1>
+        <p class="text-2xl text-jupiter-gold font-mono">Күн жүйесінің алыбы: Ақпараттық Массив</p>
+    </header>
 
-    <img src="2.png" alt="Юпитер" class="planet">
+    <main class="max-w-4xl mx-auto">
+        
+        <!-- Главная карточка Юпитера -->
+        <section class="p-8 md:p-12 bg-dark-slate card-border rounded-xl mb-12">
+            <div class="flex flex-col items-center justify-center mb-6">
+                <div class="jupiter-icon mb-4">5</div>
+                <h2 class="text-4xl font-bold text-jupiter-gold">Юпитер</h2>
+                <p class="text-lg text-slate-400 mt-2 font-mono">Газды алыптық: Системалық сипаттама</p>
+            </div>
 
-    <p>
-        Юпитер — Күн жүйесіндегі ең ірі планета.  
-        Оның массасы Жер массасынан 318 есе үлкен.
-    </p>
+            <!-- Общая информация -->
+            <div class="text-lg leading-relaxed text-center mb-8 border-b border-gray-700 pb-6">
+                <p class="text-slate-200">
+                    Юпитер — Күн жүйесіндегі бесінші және <span class="text-neon-cyan font-bold">ең үлкен</span> планета. Оның массасы қалған барлық планеталардың жиынтық массасынан 2.5 есе көп. Бұл алып негізінен сутегі мен гелийден тұратын газды алып. Қатты беті жоқ, оның атмосферасы төменге қарай сұйық металл сутегі мұхитына айналады.
+                </p>
+            </div>
 
-    <p>
-        Бұл газ алыбы сутегі мен гелийден тұрады  
-        және онда алып дауылдар байқалады.
-    </p>
+            <!-- Интересные факты (Қызықты Деректер) -->
+            <h3 class="text-2xl font-semibold text-neon-cyan mb-6 neon-glow border-b border-neon-cyan pb-2">
+                Қызықты Деректер (DATA ARRAY)
+            </h3>
 
-</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm md:text-base">
+                
+                <div class="fact-item">
+                    <span class="fact-title">Ұлы Қызыл Дақ (ҮҚД):</span>
+                    Жерден екі есе үлкен болатын, 300 жылдан астам уақыт бойы созылып келе жатқан гиганттық дауыл.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Қысқа Тәулік:</span>
+                    Юпитердің бір тәулігі (өз осінен айналуы) бар болғаны <span class="text-neon-cyan">9.9 сағатқа</span> созылады. Бұл — Күн жүйесіндегі ең қысқа тәулік.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Спутниктер:</span>
+                    Оның 95-тен астам ресми серігі бар. Ең ірілері — Галилей серіктері: Ио, Еуропа, Ганимед (бүкіл Күн жүйесіндегі ең үлкен серік) және Каллисто.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Сәтсіз Жұлдыз:</span>
+                    Егер Юпитердің массасы қазіргіге қарағанда 70-80 есе үлкен болса, ол өздігінен жануды бастап, кішкентай жұлдызға (қоңыр карликке) айналуы мүмкін еді.
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-title">Магнит Өрісі:</span>
+                    Оның магнит өрісі Жердікінен 20 мың есе қуатты. Бұл магнит өрісі Күн жүйесіндегі ең кең ауқымды магнитосфераны қалыптастырады.
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-title">Сутегі Мұхиты:</span>
+                    Планетаның ішінде сутегі газы қысыммен сұйық металл сутегіне айналады. Бұл – Күн жүйесіндегі ең үлкен «мұхит».
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="text-center mt-auto p-4 text-slate-600 text-sm">
+        <p class="font-mono">
+            [ КОНЕЦ ПЕРЕДАЧИ ДАННЫХ ] | Кәсіби даму мақсатында жасалған.
+        </p>
+    </footer>
 
 </body>
 </html>
