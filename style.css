@@ -1,98 +1,163 @@
-/* Барлық бетке ортақ */
+/* Негізгі базалық стильдер */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #050608; /* ТЕК ҚАРА ФОН */
+    color: #f5f5f5;
 
-    /* ФОН – СЕНІҢ galaxy.jpg */
-    background-image: url("galaxy.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Ортасына қою үшін */
-.page-center {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Плакат (карточка) */
-.card {
-    width: 340px;
-    padding: 20px 24px 24px;
-    border-radius: 18px;
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+/* Үлкен «планета панелі» */
+.planet-frame {
+    width: 1100px;
+    max-width: 95vw;
+    height: 600px;
+    max-height: 80vh;
+
+    background-color: #050608;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+
+    display: flex;
+    flex-direction: column;
 }
 
-/* Үстіңгі кішкентай жазулар */
-.card-top {
+/* Жоғарғы жол (ABOUT / CONTACT / PLANETS т.б.) */
+.frame-top {
+    height: 60px;
+    padding: 0 40px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     font-size: 12px;
-    opacity: 0.8;
-    margin-bottom: 10px;
-}
-
-/* Екі атау (Юпитер + Jupiter) */
-.planet-name-kk {
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 1.1;
-}
-
-.planet-name-en {
-    font-size: 16px;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    opacity: 0.8;
-    margin-bottom: 10px;
+    color: #aaaaaa;
 }
 
-/* Планета суреті */
-.planet-img {
-    width: 220px;
-    display: block;
-    margin: 12px auto 14px;
-    border-radius: 50%;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+.frame-top-nav span + span {
+    margin-left: 32px;
 }
 
-/* Текст */
-.card p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 8px;
+/* Негізгі бөлік: сол жақ (қара панель), ортасы (текст), оң жақ (планета) */
+.frame-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 1.6fr 1.5fr;
+    border-top: 1px solid #15171c;
 }
 
-.info-list {
-    list-style: none;
-    font-size: 13px;
-    margin-top: 6px;
-}
-
-.info-list li + li {
-    margin-top: 3px;
-}
-
-.info-list span {
-    font-weight: bold;
-}
-
-/* Төменгі жол */
-.card-bottom {
-    display: flex;
-    justify-content: space-between;
+/* Сол жақ қара панель (тек атмосфера, сызықтар үшін) */
+.panel-left {
+    position: relative;
+    background: radial-gradient(circle at top left, #151820, #050608 55%);
+    border-right: 1px solid #15171c;
+    padding: 26px 26px 26px 40px;
     font-size: 11px;
-    opacity: 0.85;
-    margin-top: 10px;
+    color: #797f8d;
+}
+
+/* Кіші индикаторлар (01 / 02 / 03) */
+.left-steps {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+}
+
+.left-steps div {
+    margin: 6px 0;
+    letter-spacing: 0.2em;
+}
+
+.left-steps .active {
+    color: #f5f5f5;
+}
+
+/* Ортасы – негізгі текст, атауы */
+.panel-center {
+    padding: 40px 40px 40px 40px;
+    border-right: 1px solid #15171c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.panel-center-top {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #8d929f;
+    margin-bottom: 16px;
+}
+
+.planet-title {
+    font-size: 54px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+}
+
+.planet-paragraph {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #c4c7d2;
+    max-width: 420px;
+}
+
+/* Төменгі кішкентай үш блок (Atmosphere / Climate / Physical) */
+.panel-center-bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 32px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #9fa4b3;
+}
+
+.panel-center-bottom p {
+    margin-top: 6px;
+    font-size: 11px;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.6;
+    color: #757b8a;
+    max-width: 150px;
+}
+
+/* Оң жақ – үлкен планета суреті */
+.panel-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #060a14, #020309 70%);
+}
+
+.planet-image {
+    width: 360px;
+    max-width: 90%;
+    filter: drop-shadow(0 0 40px rgba(0, 160, 255, 0.7));
+}
+
+/* Жиек дөңгелек болсын деп */
+.planet-frame,
+.planet-frame * {
+    border-radius: 0;
+}
+
+.planet-frame {
+    border-radius: 26px;
 }
